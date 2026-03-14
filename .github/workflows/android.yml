@@ -36,9 +36,8 @@ jobs:
 
       - name: Setup PNPM
         run: |
-          npm install -g corepack@0.31.0
-          corepack enable
-          corepack prepare pnpm@latest --activate
+          npm install -g pnpm@latest
+          pnpm --version
 
       - name: Install dependencies
         run: pnpm install
