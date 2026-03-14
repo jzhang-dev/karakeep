@@ -83,7 +83,8 @@ jobs:
         working-directory: apps/mobile/android
         run: |
           chmod +x gradlew
-          ./gradlew assemble${{ github.event_name == 'workflow_dispatch' && inputs.variant || 'release' }} --no-daemon --stacktrace
+          # Skip Sentry upload for CI builds (no access to original Sentry project)
+          SENTRY_SKIP_UPLOAD=true ./gradlew assemble${{ github.event_name == 'workflow_dispatch' && inputs.variant || 'release' }} --no-daemon --stacktrace
         env:
           APP_VARIANT: ${{ github.event_name == 'workflow_dispatch' && inputs.variant || 'release' }}
           ANDROID_HOME: ${{ env.ANDROID_HOME }}
