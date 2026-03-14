@@ -39,6 +39,12 @@ jobs:
           echo "$(npm bin -g)" >> $GITHUB_PATH
           pnpm --version
 
+      - name: Enable Corepack (for Yarn compatibility)
+        run: |
+          corepack enable
+          corepack prepare yarn@stable --activate
+          yarn --version
+
       - name: Install dependencies
         run: pnpm install
         env:
