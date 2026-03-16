@@ -108,14 +108,17 @@ export default {
         },
       ],
       "expo-web-browser",
-      [
-        "@sentry/react-native/expo",
-        {
-          url: "https://sentry.io/",
-          project: "react-native",
-          organization: "localhost-labs-ltd",
-        },
-      ],
+      // Disable Sentry in CI or when SENTRY_DISABLE_AUTO_UPLOAD is set
+      ...(process.env.SENTRY_DISABLE_AUTO_UPLOAD ? [] : [
+        [
+          "@sentry/react-native/expo",
+          {
+            url: "https://sentry.io/",
+            project: "react-native",
+            organization: "localhost-labs-ltd",
+          },
+        ],
+      ]),
     ],
     extra: {
       router: {
