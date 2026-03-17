@@ -4,12 +4,14 @@ import { Divider } from "@/components/ui/Divider";
 import { Text } from "@/components/ui/Text";
 import { useToast } from "@/components/ui/Toast";
 import useAppSettings from "@/lib/settings";
+import { useColorScheme } from "@/lib/useColorScheme";
 import { Check } from "lucide-react-native";
 
 export default function BookmarkDefaultViewSettings() {
   const router = useRouter();
   const { toast } = useToast();
   const { settings, setSettings } = useAppSettings();
+  const { colors } = useColorScheme();
 
   const handleUpdate = async (
     mode: "reader" | "browser" | "externalBrowser",
@@ -52,7 +54,7 @@ export default function BookmarkDefaultViewSettings() {
               }[mode]
             }
           </Text>
-          {isChecked && <Check color="rgb(0, 122, 255)" />}
+          {isChecked && <Check color={colors.primary} />}
         </Pressable>,
         <Divider
           key={mode + "-divider"}

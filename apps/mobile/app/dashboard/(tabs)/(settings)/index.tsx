@@ -165,6 +165,27 @@ export default function Settings() {
             </Pressable>
           </Link>
         </View>
+        <Divider orientation="horizontal" className="mx-6 my-1" />
+        <View className="flex flex-row items-center justify-between gap-8 px-4 py-1">
+          <Text className="flex-1" numberOfLines={1}>
+            E-ink Mode
+          </Text>
+          <Switch
+            className="shrink-0"
+            value={settings.einkMode}
+            onValueChange={(value) =>
+              setSettings({
+                ...settings,
+                einkMode: value,
+              })
+            }
+          />
+        </View>
+        <View className="px-4 pb-2">
+          <Text className="text-xs text-muted-foreground">
+            Optimize interface for E-ink displays. When enabled, all text and UI elements use pure black on white for maximum contrast and readability.
+          </Text>
+        </View>
       </View>
 
       <SectionHeader title="Reading" />

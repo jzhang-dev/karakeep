@@ -23,10 +23,14 @@ function useColorScheme() {
     }
   }, [colorScheme]);
 
+  // Determine effective color scheme based on E-ink mode
+  const effectiveColorScheme = settings.einkMode ? "eink" : (colorScheme ?? "light");
+  
   return {
-    colorScheme: colorScheme ?? "light",
-    isDarkColorScheme: colorScheme === "dark",
-    colors: COLORS[colorScheme ?? "light"],
+    colorScheme: effectiveColorScheme,
+    isDarkColorScheme: effectiveColorScheme === "dark",
+    colors: COLORS[effectiveColorScheme],
+    isEinkMode: settings.einkMode,
   };
 }
 

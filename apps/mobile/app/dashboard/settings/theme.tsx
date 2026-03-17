@@ -2,10 +2,12 @@ import { Pressable, ScrollView, View } from "react-native";
 import { Divider } from "@/components/ui/Divider";
 import { Text } from "@/components/ui/Text";
 import useAppSettings from "@/lib/settings";
+import { useColorScheme } from "@/lib/useColorScheme";
 import { Check } from "lucide-react-native";
 
 export default function ThemePage() {
   const { settings, setSettings } = useAppSettings();
+  const { colors } = useColorScheme();
 
   const options = (["light", "dark", "system"] as const)
     .map((theme) => {
@@ -23,7 +25,7 @@ export default function ThemePage() {
               ]
             }
           </Text>
-          {isChecked && <Check color="rgb(0, 122, 255)" />}
+          {isChecked && <Check color={colors.primary} />}
         </Pressable>,
         <Divider
           key={theme + "-divider"}

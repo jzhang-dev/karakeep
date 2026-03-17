@@ -20,7 +20,7 @@ import {
 import { ZReaderFontFamily } from "@karakeep/shared/types/users";
 
 export default function ReaderSettingsPage() {
-  const { isDarkColorScheme: isDark } = useColorScheme();
+  const { isDarkColorScheme: isDark, colors } = useColorScheme();
 
   const {
     settings,
@@ -150,7 +150,7 @@ export default function ReaderSettingsPage() {
                   >
                     {formatFontFamily(fontFamily)}
                   </Text>
-                  {isChecked && <Check color="rgb(0, 122, 255)" />}
+                  {isChecked && <Check color={colors.primary} />}
                 </Pressable>
                 {index < fontFamilyOptions.length - 1 && (
                   <Divider orientation="horizontal" className="h-0.5" />

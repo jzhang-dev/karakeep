@@ -29,6 +29,20 @@ const SYSTEM_COLORS = {
     destructive: "rgb(254, 67, 54)",
     primary: "rgb(3, 133, 255)",
   },
+  eink: {
+    grey6: "rgb(255, 255, 255)",
+    grey5: "rgb(255, 255, 255)",
+    grey4: "rgb(255, 255, 255)",
+    grey3: "rgb(255, 255, 255)",
+    grey2: "rgb(255, 255, 255)",
+    grey: "rgb(255, 255, 255)",
+    background: "rgb(255, 255, 255)",
+    foreground: "rgb(0, 0, 0)",
+    root: "rgb(255, 255, 255)",
+    card: "rgb(255, 255, 255)",
+    destructive: "rgb(0, 0, 0)",
+    primary: "rgb(0, 0, 0)",
+  },
 } as const;
 
 const COLORS = SYSTEM_COLORS;
