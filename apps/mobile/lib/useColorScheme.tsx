@@ -49,8 +49,10 @@ function useInitialAndroidBarSync() {
 
 export { useColorScheme, useInitialAndroidBarSync };
 
-function setNavigationBar(colorScheme: "light" | "dark") {
-  return NavigationBar.setButtonStyleAsync(
-    colorScheme === "dark" ? "light" : "dark",
-  );
+function setNavigationBar(colorScheme: string) {
+  // Determine button style based on color scheme
+  // For dark theme: light buttons, for light/eink: dark buttons
+  const isDark = colorScheme === "dark";
+  const buttonStyle = isDark ? "light" : "dark";
+  return NavigationBar.setButtonStyleAsync(buttonStyle);
 }

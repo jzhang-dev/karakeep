@@ -25,6 +25,17 @@ const NAV_THEME = {
       text: COLORS.white,
     },
   },
+  eink: {
+    ...DefaultTheme,
+    colors: {
+      background: COLORS.eink.background,
+      border: COLORS.eink.grey5,
+      card: COLORS.eink.card,
+      notification: COLORS.eink.destructive,
+      primary: COLORS.eink.primary,
+      text: COLORS.eink.foreground,
+    },
+  },
 };
 
 export { NAV_THEME };

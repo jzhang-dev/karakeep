@@ -125,6 +125,22 @@ const ANDROID_RIPPLE = {
       borderless: false,
     },
   },
+  eink: {
+    primary: {
+      color: convertToRGBA(COLORS.eink.grey4, 0.4),
+      borderless: false,
+    },
+    secondary: {
+      color: convertToRGBA(COLORS.eink.grey5, 0.4),
+      borderless: false,
+    },
+    plain: { color: convertToRGBA(COLORS.eink.grey5, 0.4), borderless: false },
+    tonal: { color: convertToRGBA(COLORS.eink.grey6, 0.4), borderless: false },
+    destructive: {
+      color: convertToRGBA(COLORS.eink.destructive, 0.4),
+      borderless: false,
+    },
+  },
 };
 
 // Add as class when possible: https://github.com/marklawlor/nativewind/issues/522
